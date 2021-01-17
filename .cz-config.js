@@ -30,7 +30,7 @@ module.exports = {
 	],
 
 	scopes: [
-		{ name: "JavaScript" }
+		{ name: "javascript" }
 	],
 
 	// it needs to match the value for field type. Eg.: 'fix'
