@@ -2,16 +2,19 @@
   "name": "f4ye-tools",
   "version": "1.0.0",
   "description": "🔧日常小工具",
-  "main": "index.js",
+  "main": "dist/f4ye-tools.min.js",
+  "module": "dist/f4ye-tools.es.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test jest --coverage --config ./jest.config.js",
+    "coverage": "npm run test && cat ./coverage/lcov.info | coveralls",
+    "build": "NODE_ENV=production npx rollup -c"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/B1gF4ceC4t/f4ye-tools.git"
   },
   "keywords": [
-    "tools"
+    "utilities"
   ],
   "author": "Faye",
   "license": "MIT",
@@ -31,9 +34,26 @@
     }
   },
   "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-external-helpers": "^7.12.1",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "babel-jest": "^26.6.3",
+    "coveralls": "^3.1.0",
     "cz-customizable": "^6.3.0",
-    "husky": "^4.3.8"
+    "eslint": "^7.18.0",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.8",
+    "jest": "^26.6.3",
+    "rollup": "^2.36.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4",
+    "webpack-merge": "^5.7.3"
   }
 }
