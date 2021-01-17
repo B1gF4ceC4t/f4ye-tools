@@ -1,0 +1,39 @@
+{
+  "name": "f4ye-tools",
+  "version": "1.0.0",
+  "description": "🔧日常小工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B1gF4ceC4t/f4ye-tools.git"
+  },
+  "keywords": [
+    "tools"
+  ],
+  "author": "Faye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/B1gF4ceC4t/f4ye-tools/issues"
+  },
+  "homepage": "https://github.com/B1gF4ceC4t/f4ye-tools#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "cz-customizable": "^6.3.0",
+    "husky": "^4.3.8"
+  }
+}
